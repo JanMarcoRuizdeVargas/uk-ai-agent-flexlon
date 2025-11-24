@@ -1,0 +1,90 @@
+{
+    "context": {
+        "version": "2.0.0",
+        "action": "on_select",
+        "domain": "beckn.one:DEG:compute-energy:1.0",
+        "timestamp": "2025-11-24T16:13:23.347Z",
+        "message_id": "7e6599ef-566c-4285-b973-97e1c819f535",
+        "transaction_id": "d288c5c1-a2f1-4565-9536-5a96da3cdd95",
+        "bap_id": "ev-charging.sandbox1.com",
+        "bap_uri": "https://ev-charging.sandbox1.com.com/bap",
+        "bpp_id": "ev-charging.sandbox1.com",
+        "bpp_uri": "https://ev-charging.sandbox1.com.com/bpp",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
+            "@type": "beckn:Order",
+            "beckn:id": "<your-beckn-unqiuely-created-order-id>",
+            "beckn:orderStatus": "QUOTE_REQUESTED",
+            "beckn:seller": "ev-charging.sandbox1.com",
+            "beckn:buyer": "ev-charging.sandbox1.com",
+            "beckn:orderItems": [
+                {
+                    "@type": "beckn:OrderItem",
+                    "beckn:lineId": "order-item-ce-001",
+                    "beckn:orderedItem": "consumer-resource-office-003",
+                    "beckn:quantity": 1,
+                    "beckn:acceptedOffer": {
+                        "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
+                        "@type": "beckn:Offer",
+                        "beckn:id": "offer-ce-cambridge-morning-001",
+                        "beckn:descriptor": {
+                            "@type": "beckn:Descriptor",
+                            "schema:name": "Cambridge Morning Compute Slot"
+                        },
+                        "beckn:items": [
+                            "consumer-resource-office-003"
+                        ],
+                        "beckn:provider": "provider-gridflex-001",
+                        "beckn:price": {
+                            "currency": "GBP",
+                            "price": 0.102
+                        },
+                        "beckn:offerAttributes": {
+                            "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/ComputeEnergy/v1/context.jsonld",
+                            "@type": "beckn:ComputeEnergyPricing",
+                            "beckn:unit": "per_kWh",
+                            "beckn:priceStability": "stable"
+                        }
+                    },
+                    "beckn:orderItemAttributes": {
+                        "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/ComputeEnergy/v1/context.jsonld",
+                        "@type": "beckn:ComputeEnergyWindow",
+                        "beckn:slotId": "slot-cambridge-morning-20251117-001",
+                        "beckn:gridParameters": {
+                            "gridArea": "Cambridge-East",
+                            "gridZone": "UK-EAST-1",
+                            "renewableMix": 80,
+                            "carbonIntensity": 120,
+                            "carbonIntensityUnit": "gCO2/kWh"
+                        },
+                        "beckn:timeWindow": {
+                            "start": "2025-11-17T10:00:00Z",
+                            "end": "2025-11-17T14:00:00Z",
+                            "duration": "PT4H"
+                        },
+                        "beckn:capacityParameters": {
+                            "availableCapacity": 5,
+                            "capacityUnit": "MW"
+                        },
+                        "beckn:pricingParameters": {
+                            "currency": "GBP",
+                            "unit": "per_kWh",
+                            "spotPrice": 0.102,
+                            "priceStability": "stable"
+                        }
+                    }
+                }
+            ],
+            "beckn:fulfillment": {
+                "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/core/v2/context.jsonld",
+                "@type": "beckn:Fulfillment",
+                "beckn:id": "fulfillment-ce-cambridge-001",
+                "beckn:mode": "GRID-BASED",
+                "beckn:status": "QUOTED"
+            }
+        }
+    }
+}
