@@ -1,5 +1,7 @@
 # FlexLon: The Flex Point Between Compute and Energy
 
+![FlexLon Architecture](CnP_25112025_024456.png)
+
 ## Overview
 FlexLon is an agentic orchestration ecosystem for data centre operators to optimise flexibility, generate new P415 protocol revenue, reduce energy costs, and lower carbon. It treats AI and data-centre workloads as flexible grid-aware energy assets coordinated through the Digital Energy Grid and the Beckn Protocol.
 
