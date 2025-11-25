@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 17% 97%;
+    --foreground: 220 13% 13%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 13%;
+
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 13% 13%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 199 89% 48%;
+
+    --radius: 0.375rem;
+
+    /* Energy status colors */
+    --energy-low: 142 76% 36%;
+    --energy-medium: 48 96% 53%;
+    --energy-high: 0 84% 60%;
+    --energy-optimal: 142 76% 36%;
+    
+    /* Carbon intensity colors */
+    --carbon-low: 142 76% 36%;
+    --carbon-medium: 48 96% 53%;
+    --carbon-high: 0 84% 60%;
+    
+    /* Compute status */
+    --compute-active: 199 89% 48%;
+    --compute-deferred: 48 96% 53%;
+    --compute-completed: 142 76% 36%;
+    
+    /* Grid colors */
+    --grid-line: 220 13% 85%;
+    --panel-bg: 220 17% 98%;
+    --panel-border: 220 13% 91%;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 199 89% 48%;
+    
+    /* Energy status colors */
+    --energy-low: 142 76% 36%;
+    --energy-medium: 48 96% 53%;
+    --energy-high: 0 84% 60%;
+    --energy-optimal: 142 76% 36%;
+    
+    /* Carbon intensity colors */
+    --carbon-low: 142 76% 36%;
+    --carbon-medium: 48 96% 53%;
+    --carbon-high: 0 84% 60%;
+    
+    /* Compute status */
+    --compute-active: 199 89% 48%;
+    --compute-deferred: 48 96% 53%;
+    --compute-completed: 142 76% 36%;
+    
+    /* Grid colors */
+    --grid-line: 217 33% 25%;
+    --panel-bg: 222 47% 8%;
+    --panel-border: 217 33% 17%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+}
+
+/* Import IBM Plex Mono font */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap');
+
+/* Custom animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-in;
+}
